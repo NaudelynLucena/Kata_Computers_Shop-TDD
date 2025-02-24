@@ -2,9 +2,17 @@ package dev.nau;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class StoreTest {
+
+    private Store store;
+
+    @BeforeEach
+    void setUp() {
+        store = new Store(1L, "Tech Store", "Juan Perez", "123456789");
+    }
 
 @Test
     void testAddComputer() {
@@ -12,4 +20,5 @@ public class StoreTest {
         assertTrue(store.addComputer(computer));
         assertEquals(1, store.listComputers().size());
     }
+
 }
